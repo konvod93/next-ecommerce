@@ -11,6 +11,21 @@ const CartModal = () => {
             ) : (
                 <div className="">
                     <Image src="https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg" alt="" width={72} height={96} className="object-cover rounded-md"/>
+                    <div className="">
+                        {/* TOP */}
+                        <div className="">
+                            {/* TITLE */}
+                            <div className="">
+                                <h3>Product Name</h3>
+                                <div className="">$49</div>
+                            </div>
+                            {/* DESC */}
+                            <div className="">
+                                avalable
+                            </div>
+                        </div>
+                        {/* BOTTOM */}
+                    </div>
                 </div>
             )}
             
