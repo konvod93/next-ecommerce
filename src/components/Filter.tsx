@@ -1,8 +1,8 @@
 
 const Filter = () => {
   return (
-    <div className="">
-      Filter
+    <div className="mt-12 flex justify-between">
+      <div className=""></div>
     </div>
   );
 };
