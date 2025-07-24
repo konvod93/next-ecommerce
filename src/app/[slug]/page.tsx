@@ -1,6 +1,11 @@
 const SinglePage = () => {
   return (
-    <div className=''>SinglePage</div>
+    <div className=''>
+      {/* IMG */}
+      <div className=""></div>
+      {/* TEXT */}
+      <div className=""></div>
+    </div>
   )
 }
 
