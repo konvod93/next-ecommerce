@@ -1,8 +1,12 @@
+import ProductImages from "@/components/ProductImages"
+
 const SinglePage = () => {
   return (
     <div className=''>
       {/* IMG */}
-      <div className=""></div>
+      <div className="">
+        <ProductImages />
+      </div>
       {/* TEXT */}
       <div className=""></div>
     </div>
