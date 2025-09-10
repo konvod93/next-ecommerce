@@ -14,7 +14,10 @@ const SinglePage = () => {
           Corporis dolorem, laboriosam nulla voluptate iure, alias blanditiis rem quis odit
           odio non praesentium fuga debitis harum laudantium cum et magnam similique.</p>
         <div className="h-[2px] bg-gray-100" />
-        <div className=""></div>
+        <div className="flex items-center gap-4">
+          <h3 className="text-xl text-gray-500 line-through">$59</h3>
+          <h2 className="font-medium text-2xl">$49</h2>
+        </div>
         <div className="h-[2px] bg-gray-100" />
       </div>
     </div>
