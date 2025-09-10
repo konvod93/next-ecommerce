@@ -1,3 +1,5 @@
+import Add from "@/components/Add"
+import CustomizeProducts from "@/components/CustomizeProducts"
 import ProductImages from "@/components/ProductImages"
 
 const SinglePage = () => {
@@ -19,6 +21,10 @@ const SinglePage = () => {
           <h2 className="font-medium text-2xl">$49</h2>
         </div>
         <div className="h-[2px] bg-gray-100" />
+        {/* CustomizeProducts */}
+        <CustomizeProducts />
+        {/* Add */}
+        <Add />
       </div>
     </div>
   )
