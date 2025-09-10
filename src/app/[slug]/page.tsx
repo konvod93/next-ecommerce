@@ -7,8 +7,16 @@ const SinglePage = () => {
       <div className="w-full lg:w-1/2 lg:sticky top-20 h-max">
         <ProductImages />
       </div>
-      {/* TEXT */}
-      <div className="w-full lg:w-1/2 flex flex-col gap-6">TEXTS</div>
+      {/* TEXTS */}
+      <div className="w-full lg:w-1/2 flex flex-col gap-6">
+        <h1 className="text-4xl font-medium">Product Name</h1>
+        <p className="text-gray-500">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Corporis dolorem, laboriosam nulla voluptate iure, alias blanditiis rem quis odit
+          odio non praesentium fuga debitis harum laudantium cum et magnam similique.</p>
+        <div className="h-[2px] bg-gray-100" />
+        <div className=""></div>
+        <div className="h-[2px] bg-gray-100" />
+      </div>
     </div>
   )
 }
