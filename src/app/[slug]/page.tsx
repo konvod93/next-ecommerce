@@ -26,6 +26,24 @@ const SinglePage = () => {
         {/* Add */}
         <Add />
         <div className="h-[2px] bg-gray-100" />
+        <div className="text-sm">
+          <h4 className="font-medium mb-4">Title</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat nulla architecto molestiae! 
+            Nisi error tenetur voluptatem magni, dolorum, provident sed dicta minima fugiat eveniet odio nemo perspiciatis. 
+            Ratione, doloremque modi?</p>
+        </div>
+        <div className="text-sm">
+          <h4 className="font-medium mb-4">Title</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat nulla architecto molestiae! 
+            Nisi error tenetur voluptatem magni, dolorum, provident sed dicta minima fugiat eveniet odio nemo perspiciatis. 
+            Ratione, doloremque modi?</p>
+        </div>
+        <div className="text-sm">
+          <h4 className="font-medium mb-4">Title</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat nulla architecto molestiae! 
+            Nisi error tenetur voluptatem magni, dolorum, provident sed dicta minima fugiat eveniet odio nemo perspiciatis. 
+            Ratione, doloremque modi?</p>
+        </div>
       </div>
     </div>
   )
