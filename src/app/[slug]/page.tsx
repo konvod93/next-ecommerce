@@ -25,6 +25,7 @@ const SinglePage = () => {
         <CustomizeProducts />
         {/* Add */}
         <Add />
+        <div className="h-[2px] bg-gray-100" />
       </div>
     </div>
   )
