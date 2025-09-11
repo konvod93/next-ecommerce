@@ -1,17 +1,29 @@
 'use client'
 import { useState } from "react";
 
+//TEMPORARY
+
+const stock = 4;
+
 const Add = () => {
   const [quantity, setQuantitu] = useState(1);
+  const handleQuantity = (type: "i" | "d") => {
+    if (type === "d" && quantity > 1) {
+      setQuantitu((prev) => prev - 1);
+    } 
+    if (type === "i" && quantity < stock) {
+      setQuantitu((prev) => (prev + 1));
+    }
+  };
   return (
     <div className="flex flex-col gap-4">
       <h4 className="font-medium">Choose a Quantity</h4>
       <div className="flex justify-between">
         <div className="flex items-center gap-4">
           <div className="bg-gray-100 py-2 px-4 rounded-3xl flex items-center justify-between w-32">
-            <button className="cursor-pointer text-xl">-</button>
+            <button className="cursor-pointer text-xl" onClick={()=>handleQuantity("d")}>-</button>
             {quantity}
-            <button className="cursor-pointer text-xl">+</button>
+            <button className="cursor-pointer text-xl" onClick={()=>handleQuantity("i")}>+</button>
           </div>
           <div className="text-xs">Only <span className="text-orange-500">4 items</span> left!<br /> {"Dont't"} miss it</div>
         </div>
