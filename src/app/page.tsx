@@ -3,12 +3,12 @@
 import CategoryList from "@/components/CategoryList"
 import ProduvtList from "@/components/ProductList"
 import Slider from "@/components/Slider"
-import { useContext, useEffect } from "react"
-import { WixClientContext } from "@/context/wixContext"
+import { useEffect } from "react"
+import { useWixClient } from "@/hooks/useWixClient"
 
 const HomePage = () => {
   
-  const wixClient = useContext(WixClientContext);
+  const wixClient = useWixClient();
 
   useEffect(() => {
     const getProducts = async () => {
