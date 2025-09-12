@@ -3,10 +3,11 @@
 import { createClient, OAuthStrategy } from "@wix/sdk";
 import { products, collections } from "@wix/stores";
 import Cookies from "js-cookie";
+import { createContext } from "vm";
 
 const refreshToken = JSON.parse(Cookies.get("refreshToken") || "{}");
 
-const myWixClient = createClient({
+const wixClient = createClient({
   modules: {
     products,
     // currntCart,
@@ -20,3 +21,5 @@ const myWixClient = createClient({
     },
   }),
 });
+
+export const WixClientContext = createContext<>(wixClient);
