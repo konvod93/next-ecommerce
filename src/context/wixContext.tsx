@@ -3,6 +3,8 @@
 import { createClient, OAuthStrategy } from "@wix/sdk";
 import { products, collections } from "@wix/stores";
 
+const refreshToken = 
+
 const myWixClient = createClient({
   modules: {
     products,
