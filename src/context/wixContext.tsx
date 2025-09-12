@@ -2,6 +2,7 @@
 
 import { createClient, OAuthStrategy } from "@wix/sdk";
 import { products, collections } from "@wix/stores";
+import Cookies from "js-cookie";
 
 const refreshToken = 
 
