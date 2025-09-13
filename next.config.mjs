@@ -8,6 +8,12 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'static.wixstatic.com', // замените на нужный домен
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 
