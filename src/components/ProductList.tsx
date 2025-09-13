@@ -9,7 +9,7 @@ const ProductList = async ({ categoryId, limit }: { categoryId: string; limit?: 
 
     const wixClient = await wixClientServer();
     const res = await wixClient.products.queryProducts().eq("collectionIds", categoryId).limit(limit || PRODUCT_PER_PAGE).find();
-
+    
     return (
         <div className="mt-12 flex gap-x-8 gap-y-16 justify-between flex-wrap">
             {res.items.map((product: products.Product) => (
@@ -35,8 +35,13 @@ const ProductList = async ({ categoryId, limit }: { categoryId: string; limit?: 
                         />
                     </div>
                     <div className="flex justify-between">
-                        <span className="font-medium">Produvt Name</span>
-                        <span className="font-semibold">$49</span>
+                        <span className="font-medium">{product.name}</span>
+                        <span className="font-semibold">
+                            {product.priceData?.price?.toLocaleString("en-US", {
+                                style: "currency",
+                                currency: product.priceData?.currency || "USD",
+                            }) ?? "N/A"}
+                        </span>
                     </div>
                     <div className="tex-sm text-gray-500">My description</div>
                     <button className="rounded-2xl ring-1 w-max ring-lama text-lama py-2 px-4 text-xs hover:bg-lama hover:text-white">Add to Cart</button>
