@@ -16,7 +16,7 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
     return notFound()
   }
   const product = products.items[0];
-  console.log(product.variants);
+  console.log(product.productOptions);
   return (
     <div className='px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative flex flex-col lg:flex-row gap-16'>
       {/* IMG */}
@@ -38,7 +38,13 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
         )}
         <div className="h-[2px] bg-gray-100" />
         {/* CustomizeProducts */}
-        <CustomizeProducts />
+        {product.variants && product.productOptions ? (<CustomizeProducts
+          productId={product._id ?? ""}
+          variants={product.variants ?? []}
+          productOptions={product.productOptions ?? []}
+        />) : (
+          <Add />
+        )}
         {/* Add */}
         <Add />
         <div className="h-[2px] bg-gray-100" />
@@ -51,8 +57,6 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
       </div>
     </div>
   )
-
-
 }
 
 export default SinglePage
