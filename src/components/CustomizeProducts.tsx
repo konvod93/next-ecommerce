@@ -2,6 +2,7 @@
 
 import { products } from "@wix/stores"
 import { useState, useEffect } from "react"
+import Add from "./Add"
 
 const CustomizeProducts = ({
     productId,
@@ -46,7 +47,6 @@ const CustomizeProducts = ({
         }));
     }
 
-
     return (
         <div className="flex flex-col gap-6">
             {productOptions.map((option) => (
@@ -89,6 +89,12 @@ const CustomizeProducts = ({
                     </ul>
                 </div>
             ))}
+            <Add
+                productId={productId}
+                variantId={selectedVariant?._id ||
+                    "00000000-0000-0000-0000-000000000000"}
+                stockNumber={selectedVariant?.stock?.quantity || 0}
+            />
             {/* COLOR */}
             {/* 
                     <ul className="flex items-center gap-3">
