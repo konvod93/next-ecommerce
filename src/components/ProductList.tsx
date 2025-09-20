@@ -3,16 +3,16 @@ import Link from "next/link";
 import { wixClientServer } from "../lib/wixClientServer";
 import { products } from "@wix/stores";
 import DOMPurify from "isomorphic-dompurify";
+import Pagination from "./Pagination";
 
-const PRODUCT_PER_PAGE = 20;
+const PRODUCT_PER_PAGE = 8;
 
 const ProductList = async ({
     categoryId,
-    limit,
     searchParams
 }: {
     categoryId: string;
-    limit?: number;
+    limitPerPage?: number;
     searchParams?: any
 }) => {
     const wixClient = await wixClientServer();
@@ -25,7 +25,8 @@ const ProductList = async ({
         .hasSome("productType", searchParams?.type ? [searchParams.type] : ["physical", "digital"])
         .gt("priceData.price", searchParams?.min || 0)
         .lt("priceData.price", searchParams?.max || 999999)
-        .limit(limit || PRODUCT_PER_PAGE);
+        .limit(PRODUCT_PER_PAGE)
+        .skip(searchParams?.page ? parseInt(searchParams.page)*(PRODUCT_PER_PAGE) : 0);
 
     // Применяем сортировку ПЕРЕД выполнением запроса
     if (searchParams?.sort) {
@@ -37,7 +38,6 @@ const ProductList = async ({
             productQuery = productQuery.descending(sortBy);
         }
     }
-
 
     // Выполняем запрос
     const res = await productQuery.find();
@@ -91,6 +91,10 @@ const ProductList = async ({
                     </button>
                 </Link>
             ))}
+            <Pagination
+                currentPage={res.currentPage || 0}
+                hasPrev={res.hasPrev()}
+                hasNext={res.hasNext()} />
         </div>
     );
 };
