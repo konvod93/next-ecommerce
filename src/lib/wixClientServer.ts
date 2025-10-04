@@ -7,9 +7,10 @@ export const wixClientServer = async () => {
     let refreshToken;
 
     try {
-        const cookieSrore = cookies();
-        const refreshTokenCookie = cookieSrore.get("refreshToken");
+        const cookieStore = cookies();
+        const refreshTokenCookie = cookieStore.get("refreshToken");
         refreshToken = JSON.parse(refreshTokenCookie?.value || "{}");
+        
     } catch (e) { }
 
     const wixClient = createClient({
@@ -27,5 +28,6 @@ export const wixClientServer = async () => {
             },
         }),
     });
+    console.log("refreshToken:", refreshToken);
     return wixClient;
 }
